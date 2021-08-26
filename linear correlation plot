@@ -1,0 +1,12 @@
+import numpy as np  #import library, copied code from source 
+import matplotlib.pyplot as plt # "as" is the alias 
+#np.random.seed(42) #seed for reproducible result.
+#random_numbers = np.random.random(size=4) # this is the random number generator 
+#random_numbers   #  it prints
+
+#actual part begins 
+x = np.random.random(size = 100) # array x
+c = np.random.uniform(low =0.11, high=  0.12, size = 100) # constant term 
+m = 0.1                          # slope  
+y = m*x + c                      # generate the new line 
+plt.scatter(x,y, c = "blue")     # plot  
