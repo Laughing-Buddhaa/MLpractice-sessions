@@ -1,0 +1,40 @@
+import numpy as np                    #libraries 
+import matplotlib.pyplot as plt       # "as" is the alias 
+from sklearn.linear_model import LinearRegression  
+from sklearn.metrics import mean_squared_error, r2_score
+
+#create artificial dataset for practice 
+x = np.random.random(size = 100) # array x
+l =len(x)
+c = np.random.uniform(low =0.11, high=  0.12, size = 100) # constant term 
+m = 0.1                          # slope  
+y = m*x + c                      # generate the new line
+
+#gradient descent
+from sklearn.model_selection import train_test_split
+x_train,x_test,y_train,y_test=train_test_split(x,y,random_state=6)
+lx=len(x_train)
+
+d=0.5
+alpha=0.01
+n=4500
+for i in range(n):
+    slope=0
+    intercept=0
+    for j in range(lx):
+        random_index=np.random.randint(lx)
+        intercept=intercept+((m*x_train[random_index:random_index+1]+d)-y_train[random_index:random_index+1])
+        slope=slope+((m*x_train[random_index:random_index+1]+d)-y_train[random_index:random_index+1])*x_train[random_index:random_index+1]
+        d=d-alpha*(intercept/lx)
+        m=m-alpha*(slope/lx)
+
+print(f"slope is {m}")
+print(f"intercept is {d}")
+
+y_pred=np.dot(m[0],x_test)+d[0]
+y_pred
+
+plt.plot(x_test,y_pred,marker='o',
+         color='blue',markerfacecolor='red',
+         markersize=10,linestyle='dashed')
+plt.scatter(x,y,marker='o',color='red')
