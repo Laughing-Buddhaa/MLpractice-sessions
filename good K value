@@ -1,13 +1,6 @@
 Idea : distance of points in the cluster from the centroid should be low for a good value of K
-
 for each cluster let \bar{x} be the centroid and x_ij be the points of the cluster 
-Y_j = sum of square of distances from centroid 
-
-Algorithm : 
-Perform clustering for k = 0 to n
+Algorithm : Perform clustering for k = 0 to n
 Calculate the value of \sum{j in 1 to K} Y_j
-return K for which the above sum is minimum 
+return K for which the above sum is does not decrease much i.e. K for which there is no drastic change in sum value 
 
-Note: If you let your K increase to a value comparable to the szie size of the dataset then ultimately every point will end up becoming a centroid 
-This is a bad idea
-So the value of K after which the value of the sum calculated above does not change much should be choosen 
