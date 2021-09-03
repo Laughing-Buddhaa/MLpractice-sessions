@@ -1,6 +1,7 @@
 Idea : distance of points in the cluster from the centroid should be low for a good value of K
-for each cluster let \bar{x} be the centroid and x_ij be the points of the cluster 
-Algorithm : Perform clustering for k = 0 to n
+for each cluster let \bar{x_j} be the centroid and x_ij be the points of the cluster. Y_j is the sum of squares of distances of x_j from \baar{x}
+
+Algorithm : 
+Perform clustering for k = 0 to n(some  suitable upper bound)
 Calculate the value of \sum{j in 1 to K} Y_j
 return K for which the above sum is does not decrease much i.e. K for which there is no drastic change in sum value 
-
