@@ -1,0 +1,48 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+#1
+mean = [0,0]
+cov = [[1, 0], [0,1]] #identity covariance matrix
+x, y = np.random.multivariate_normal(mean, cov, 100).T
+plt.plot(x, y, 'x')
+plt.axis('equal') #equal for same scale on axes of plot
+plt.show()
+
+#2
+mean = [-1,1]
+cov = [[1, 0], [0,1]] #identity covariance matrix
+x, y = np.random.multivariate_normal(mean, cov, 100).T
+plt.plot(x, y, 'x')
+plt.axis('equal')
+plt.show()
+# cluster center moves to the the new mean
+
+#3
+mean = [0,0]
+cov = [[2, 0], [0,2]] #identity covariance matrix
+x, y = np.random.multivariate_normal(mean, cov, 100).T
+plt.plot(x, y, 'x')
+plt.axis('equal')
+plt.show()
+
+#4
+mean = [0,0]
+cov = [[1, 0.5], [0.5,1]] #identity covariance matrix
+x, y = np.random.multivariate_normal(mean, cov, 100).T
+plt.plot(x, y, 'x')
+plt.axis('equal')
+plt.show()
+
+#5
+mean = [0,0]
+cov = [[1, -0.5], [-0.5,1]] #identity covariance matrix
+x, y = np.random.multivariate_normal(mean, cov, 100).T
+plt.plot(x, y, 'x')
+plt.axis('equal')
+plt.show()
+
+#In The covariance matrix the entries of the anti-principal diagonal represent 
+#correlation between x and y.If x and y are independent then then those entries 
+#would be zero. So as this value increases the plot will start resembling some 
+#relation between x and y
